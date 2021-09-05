@@ -39,7 +39,7 @@ export default function Productnew(){
       }
      const respuesta = await axios.post("/productos/agregar", body);
       if (respuesta.status === 200) {
-        history.push("/products/saved/"+respuesta.data.id+"/"+respuesta.data.nombre); 
+        history.push("/products/saved/"+respuesta.data._id+"/"+respuesta.data.nombre); 
         
       }
   

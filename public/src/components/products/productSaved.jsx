@@ -3,6 +3,7 @@ import {useParams,Link} from 'react-router-dom';
 
 export default function Productsaved(){
     const params= useParams();
+    console.log(params)
     return(
         <div className="flex-container">
             <div className="col-md"></div>
