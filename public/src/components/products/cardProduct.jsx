@@ -4,7 +4,7 @@ return(
  
       <div className="datos">
         <div className=" text">
-            id: {propiedades.unProducto.id}<br/>
+            id: {propiedades.unProducto._id}<br/>
             nombre: {propiedades.unProducto.nombre}<br/>
             descripcion: {propiedades.unProducto.descripcion}<br/>
             precio: {propiedades.unProducto.precio}

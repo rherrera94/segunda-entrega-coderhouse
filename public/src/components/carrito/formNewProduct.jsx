@@ -18,7 +18,6 @@ export default function Productnew(){
     try {
     // compruebo que se ingresen todos los datos
       if (body.id.trim()===""){
-        console.log("ingresa"+body.id)
         swal({
           title:"Error: ",
           text: "faltan llenar campos",
@@ -29,9 +28,8 @@ export default function Productnew(){
       })
       }
      const respuesta = await axios.post("/carrito/agregar/"+ body.id);
-     console.log(respuesta.status);
      if (respuesta.status === 200) {
-        history.push("/carrito/saved/"+respuesta.data.id+"/"+respuesta.data.producto.nombre); 
+        history.push("/carrito/saved/"+respuesta.data._id+"/"+respuesta.data.producto.nombre); 
         
       }
   
@@ -53,7 +51,8 @@ export default function Productnew(){
           <div className="card distancia-box">
             <div className="card-body card-product-new">
             <h5 className="card-title">Agregar Producto</h5>
-            <input type="number" name="id" placeholder="id" className="form-control" onChange={(e) => {
+            <input type="text" name="id" placeholder="id" className="form-control" onChange={(e) => {
+
                 setId(e.target.value);
               }}
             />

@@ -66,6 +66,7 @@ return (
             <div className="col-md"></div>
             <div className="col-md-3">
               {productos.map((unProducto, index) => {
+                console.log(unProducto)
                       return (
                         <div key={index}>
                         <div className="col-md-10">
@@ -75,7 +76,7 @@ return (
                             </div>
                             <div className="card-footer">
                               <div className="btn-group" role="group" aria-label="Basic Example">
-                              <button type="button" className="btn btn-primary" onClick={() => borrador(unProducto.id) }>Borrar</button>            
+                              <button type="button" className="btn btn-primary" onClick={() => borrador(unProducto._id) }>Borrar</button>            
                               </div>
                             </div>
                           </div>
