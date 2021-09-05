@@ -1,5 +1,5 @@
 const express=require('express');
-const routes=require ('./routes/routes');
+const routes=require ('../routes/routes');
 const cors=require ('cors');
 const compression=require ('compression');
 const router=express.Router();
@@ -12,4 +12,4 @@ app.use(cors());
 app.use(compression());
 app.use(routes(router));
 
-module.exports=app;
+module.exports={app};
