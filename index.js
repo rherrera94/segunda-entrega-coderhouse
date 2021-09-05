@@ -1,5 +1,6 @@
 const {PORT}=require("./persistencia/config/globals");
-const {app}=require("./persistencia/server");
+
+const {app}=require("./server");
 const{getConnection}=require('./persistencia/models/db/connection')
 
 getConnection().then((message)=>{
