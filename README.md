@@ -1,5 +1,11 @@
 # segunda-entrega-coderhouse
 Segunda entrega del proyecto final del curso Programación Backend de coderhouse
+    *** NOTA: LA SECCION DE FILTROS IMPLEMENTADA EN EL BACKEND PODRA SER TESTEADA DESDE EL POSTMAN PARA ELLO TENER EN CUENTA QUE LAS KEY UTILIZADAS SON:***
+
+*** nombre: para filtrar por nombre de producto ***
+*** precio_max y precio_min: para filtrar por rango de precios ***
+*** stock_max y stock_min: para filtrar por rango de stock ***
+
 
 ```````````````````````````````````````````````````````````````````````````````````
 Para ver el proyecto en el navegador ingresar a https://segunda-entrega-coder-herrera.herokuapp.com/

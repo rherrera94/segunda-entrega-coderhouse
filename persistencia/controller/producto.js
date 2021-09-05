@@ -34,7 +34,6 @@ class ProductoControlador{
 			
 			if(Object.keys(req.query).length ){
                 let productoFiltrar = {}
-				console.log(req.query)
                 if(req.query.nombre){
 					productoFiltrar.nombre = req.query.nombre;
 				} 
@@ -52,7 +51,6 @@ class ProductoControlador{
 				}
 
                 const productos = await ProductoService.filtro(productoFiltrar)
-				console.log(productos)
                 return res.json(productos)
 
             }
