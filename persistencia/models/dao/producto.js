@@ -10,8 +10,9 @@ class productoDAO{
 	async vistaProductosid(id){
 		return productModel.findById(id);
 	}
-	async modificar({nombre,descripcion,codigo,foto,precio,stock}){
-		
+	async modificar({id,nombre,descripcion,codigo,foto,precio,stock}){
+		const productoModificar=await productModel.findByIdAndUpdate(id,{nombre,descripcion,codigo,foto,precio,stock},{new:true})
+		return productoModificar
 	}
 	async borrarProducto(id){
 		await productModel.deleteOne({ _id: id})
