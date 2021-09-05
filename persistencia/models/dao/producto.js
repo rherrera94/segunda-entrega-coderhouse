@@ -1,4 +1,4 @@
-const productModel=require("../producto");
+const productModel=require("../schemas/producto");
 
 class productoDAO{
 	async createProducto({nombre,descripcion,codigo,foto,precio,stock}){
