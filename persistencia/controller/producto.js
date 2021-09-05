@@ -32,6 +32,30 @@ class ProductoControlador{
 	async productovController(req,res,next){
 		try{
 			
+			if(Object.keys(req.query).length ){
+                let productoFiltrar = {}
+				console.log(req.query)
+                if(req.query.nombre){
+					productoFiltrar.nombre = req.query.nombre;
+				} 
+                if(req.query.codigo) {
+					productoFiltrar.codigo = req.query.codigo
+				}
+                if((req.query.precio_max && req.query.precio_min)||(req.query.precio_max && parseInt(req.query.precio_min>=0))){
+					productoFiltrar.precio_max=parseInt(req.query.precio_max);
+					productoFiltrar.precio_min=parseInt(req.query.precio_min);
+
+				}
+                if((req.query.stock_max && req.query.stock_min)||(req.query.stock_max && parseInt(req.query.stock_min>=0))){
+					productoFiltrar.stock_max=parseInt(req.query.stock_max);
+					productoFiltrar.stock_min=parseInt(req.query.stock_min);
+				}
+
+                const productos = await ProductoService.filtro(productoFiltrar)
+				console.log(productos)
+                return res.json(productos)
+
+            }
 			if(!req.params.id){
 				var contenido= await ProductoService.vistaProducto();
 				if (contenido.length==0){

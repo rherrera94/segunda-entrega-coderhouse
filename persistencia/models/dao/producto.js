@@ -17,5 +17,14 @@ class productoDAO{
 	async borrarProducto(id){
 		await productModel.deleteOne({ _id: id})
 	}
+	async filtro(producto){
+		if((producto.precio_max && producto.precio_min)||(producto.precio_max && producto.precio_min>=0)){
+			return productModel.find({$and:[{precio:{$gt:producto.precio_min}},{precio:{$lt:producto.precio_max}}]})
+		}
+		if((producto.stock_max && producto.stock_min)||(producto.stock_max && producto.stock_min>=0)){
+			return productModel.find({$and:[{stock:{$gt:producto.stock_min}},{stock:{$lt:producto.stock_max}}]})
+		}
+		return productModel.find(producto)
+	}
 };
 module.exports=new productoDAO();

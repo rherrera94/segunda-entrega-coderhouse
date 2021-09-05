@@ -18,5 +18,8 @@ class productoService{
 	async borrarProducto(id){
 		return ProductoDAO.borrarProducto(id);
 	}
+	async filtro(producto){
+		return ProductoDAO.filtro(producto);
+	}
 }
 module.exports=new productoService();
