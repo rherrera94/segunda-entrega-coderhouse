@@ -1,14 +1,14 @@
 const carritoModel=require('../schemas/carrito')
 
 class carritoDAO{
-	async createProducto({nombre,descripcion,codigo,foto,precio,stock,timestamp,id_producto}){
-		return await carritoModel.create({nombre,descripcion,codigo,foto,precio,stock,timestamp,id_producto});
+	async createProducto({producto}){
+		return await carritoModel.create({producto});
 	}
 	async vistaProductos(){
-		return carritoModel.find();
+		return carritoModel.find().populate("producto");
 	}
 	async vistaProductosid(id){
-		return carritoModel.findById(id);
+		return carritoModel.findById(id).populate("producto");
 	}
 	async borrarProducto(id){
 		await carritoModel.deleteOne({ _id: id})

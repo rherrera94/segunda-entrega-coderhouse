@@ -11,19 +11,12 @@ class CarritoControlador{
 				throw new Error('Producto no encontrado');
 			}
 			let productoGuardar={
-				"nombre":prod.nombre,
-				"descripcion":prod.descripcion,
-				"codigo":prod.codigo,
-				"foto":prod.foto,
-				"precio":prod.precio,
-				"stock": prod.stock,
-				"id_producto":prod.id
+				"producto":prod
 			};
 			let resultado=await CarritoService.createProducto(productoGuardar);
 			if (resultado.length==0){
 				throw new Error("Error al guardar el archivo");
 			}
-			
 			res.status(200).json(resultado);
 		}catch(e){
 			res.status(404).json({"error":e.message});
