@@ -75,7 +75,7 @@ return (
                             </div>
                             <div className="card-footer">
                               <div className="btn-group" role="group" aria-label="Basic Example">
-                              <button type="button" className="btn btn-primary" onClick={() => borrador(unProducto.id) }>Borrar</button>       
+                              <button type="button" className="btn btn-primary" onClick={() => borrador(unProducto._id) }>Borrar</button>       
                               <Link to={"/products/editar/"+ unProducto._id} type="button" className="btn btn-primary">Editar </Link>
                               </div>
                             </div>
