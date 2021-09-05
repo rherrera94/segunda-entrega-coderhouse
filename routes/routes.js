@@ -1,4 +1,3 @@
-//const {productoController, productovController, productovControllerid, productobController, productosVista}=require("../controller/producto");
 const isAdmin=require('../Middleware/funcionAdmin');
 const{productoController, productovController, productobController, productoActualizarid}=require('../persistencia/controller/producto')
 module.exports=(router)=>{

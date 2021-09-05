@@ -1,16 +1,16 @@
-const tipoPersistencia=require('../../factory/factory')
-const ProductoDAO=tipoPersistencia.productos;
+
+const ProductoDAO=require('../models/dao/producto')
 
 class productoService{
 	constructor(){}
 	async createProducto(producto){
-		return ProductoDAO.guardar(producto);
+		return ProductoDAO.createProducto(producto);
 	}
 	async vistaProducto(){
-		return ProductoDAO.leer();
+		return ProductoDAO.vistaProductos();
 	}
 	async vistaProductoid(id){
-		return ProductoDAO.buscar(id);
+		return ProductoDAO.vistaProductosid(id);
 	}
 	async actualizarProducto(producto){
 		return ProductoDAO.modificar(producto);

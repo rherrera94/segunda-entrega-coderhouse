@@ -10,13 +10,7 @@ class ProductoControlador{
 				|| !req.body.precio|| !req.body.stock){
 				throw new Error ("debe rellenar todos los datos solicitados")
 			}
-			let d=new Date();
-			let mes=d.getMonth();
-			mes=mes+1;
-			let fech=d.getDate()+"/"+mes+"/"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();      
-		
 			let productoGuardar={
-				"timestamp":fech,
 				"nombre":req.body.nombre,
 				"descripcion":req.body.descripcion,
 				"codigo":req.body.codigo,
@@ -61,14 +55,9 @@ class ProductoControlador{
 			let producto=await ProductoService.vistaProductoid(req.params.id);
 			if (producto.length==0){
 				throw new Error("El producto buscado no existe");
-			}
-			let d=new Date();
-			let mes=d.getMonth();
-			mes=mes+1;
-			let fech=d.getDate()+"/"+mes+"/"+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();      
+			}    
 		
 			let productoaModificar={
-				"timestamp":fech,
 				"nombre":req.body.nombre,
 				"descripcion":req.body.descripcion,
 				"codigo":req.body.codigo,
