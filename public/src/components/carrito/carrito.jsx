@@ -66,7 +66,6 @@ return (
             <div className="col-md"></div>
             <div className="col-md-3">
               {productos.map((unProducto, index) => {
-                console.log(unProducto)
                       return (
                         <div key={index}>
                         <div className="col-md-10">
