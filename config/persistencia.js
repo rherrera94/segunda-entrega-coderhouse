@@ -1,6 +1,5 @@
 /**
  * tipos de persistencia:
- * 0.- memoria.
  * 1.- fs.
  * 2.-MySQL/MariaDB local
  * 3.-MySQL/MariaDB DBaaS
