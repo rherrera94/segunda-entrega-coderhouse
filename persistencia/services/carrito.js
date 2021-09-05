@@ -1,22 +1,18 @@
-const tipoPersistencia=require('../../factory/factory')
-const CarritoDAO=tipoPersistencia.carrito;
+const ProductoDAO=require('../models/dao/carrito')
 
-class carritoService{
+class productoService{
 	constructor(){}
-    async agregarProducto(producto){
-        return CarritoDAO.agregarProducto(producto);
-    }
+	async createProducto(producto){
+		return ProductoDAO.createProducto(producto);
+	}
 	async vistaProducto(){
-		return CarritoDAO.leer();
+		return ProductoDAO.vistaProductos();
 	}
 	async vistaProductoid(id){
-		return CarritoDAO.buscar(id);
-	}
-	async actualizarProducto(producto){
-		return ProductoDAO.modificar(producto);
+		return ProductoDAO.vistaProductosid(id);
 	}
 	async borrarProducto(id){
 		return ProductoDAO.borrarProducto(id);
 	}
 }
-module.exports=new carritoService();
+module.exports=new productoService();
