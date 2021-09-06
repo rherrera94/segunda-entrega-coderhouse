@@ -31,6 +31,7 @@ export default function Editarproduct(props) {
     }
 
     React.useEffect(() => {
+        console.log("params"+params)
         if (!params.id) return;
         buscarProductoPorId(params.id)
     }, [params] );
@@ -79,7 +80,7 @@ export default function Editarproduct(props) {
             foto:form.foto,
             precio:form.precio,
             stock:form.stock,
-            id:form.id
+            _id:form._id
         };
         try {
         // compruebo que se ingresen todos los datos
@@ -97,8 +98,8 @@ export default function Editarproduct(props) {
         
         }
         if (flag===0){
-            const respuesta = await axios.put("/productos/actualizar/"+body.id, body);
-            props.history.push("/products/saved/"+respuesta.data.id+"/"+respuesta.data.nombre);
+            const respuesta = await axios.put("/productos/actualizar/"+body._id, body);
+            props.history.push("/products/saved/"+respuesta.data._id+"/"+respuesta.data.nombre);
         }
           
         

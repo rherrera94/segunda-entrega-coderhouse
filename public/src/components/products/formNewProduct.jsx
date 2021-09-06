@@ -69,7 +69,7 @@ export default function Productnew(){
                 setDescripcion(e.target.value);
               }}
             />
-            <input type="text" name="codigo" placeholder="codigo" className="form-control" onChange={(e) => {
+            <input type="number" name="codigo" placeholder="codigo" className="form-control" onChange={(e) => {
                 setCodigo(e.target.value);
               }}
             />

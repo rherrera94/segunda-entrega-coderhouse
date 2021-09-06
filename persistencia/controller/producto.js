@@ -73,6 +73,7 @@ class ProductoControlador{
 	}
 	async productoActualizarid(req,res,next){
 		try{
+			console.log(req.params.id)
 			//me fijo si el producto existe
 			let producto=await ProductoService.vistaProductoid(req.params.id);
 			if (producto.length==0){

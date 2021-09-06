@@ -11,6 +11,7 @@ class productoDAO{
 		return productModel.findById(id);
 	}
 	async modificar({id,nombre,descripcion,codigo,foto,precio,stock}){
+		
 		const productoModificar=await productModel.findByIdAndUpdate(id,{nombre,descripcion,codigo,foto,precio,stock},{new:true})
 		return productoModificar
 	}
